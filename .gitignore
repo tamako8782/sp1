@@ -1,0 +1,366 @@
+# ==========================
+# 内部向け資料
+# ==========================
+# 内部用のドキュメントや一時的なファイルを無視
+milestone.drawio
+# KustomizeやKindのテスト時に生成される一時ファイルやログを無視
+k8s/kustomize-test/*
+k8s/kind_logs/*
+# Kubernetesのマニフェストファイルを無視
+k8s/manifest/*
+
+
+# ==========================
+# Go 関連
+# ==========================
+# 公式テンプレートに基づくサンプル
+# https://github.com/github/gitignore/blob/main/community/Golang/Go.AllowList.gitignore
+
+# Goバイナリファイルを無視
+backend/bin/*
+
+# すべてのpkgディレクトリを除外
+pkg/*
+
+# ただし、自分のプロジェクトコードやテストファイルは追跡対象に含める
+!pkg/**/*.go
+!pkg/**/*_test.go
+
+# 実行ファイル、共有ライブラリ、プラグインを無視
+*.exe
+*.dll
+*.so
+*.dylib
+
+# go testコマンドで生成されるテストバイナリファイルを無視
+*.test
+
+# Goのカバレッジツールによる出力ファイルを無視
+*.out
+
+# Go modulesのワークスペースファイルを無視
+go.work
+go.work.sum
+
+# 環境変数ファイルを無視
+.env*
+.env/**
+.envrc
+
+# ==========================
+# React & JavaScript 関連
+# ==========================
+# ログファイルを無視
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Node.jsのバイナリアドオンを無視
+build/Release
+
+# 依存関係のディレクトリを無視
+node_modules/
+jspm_packages/
+
+# 配布用のディレクトリを無視
+dist/
+
+# TypeScriptの宣言ファイルを無視
+typings/
+
+# npmやeslintのキャッシュファイルを無視
+.npm
+.eslintcache
+
+# npm packコマンドで生成されるファイルを無視
+*.tgz
+
+# Yarnの整合性ファイルを無視
+.yarn-integrity
+
+
+# ==========================
+# Kubernetes 関連
+# ==========================
+# MacのSMB共有で生成される一時ファイルを無視
+._*
+
+# Macのゴミ箱ファイルを無視
+.DS_Store
+
+# ローカルの設定ファイルを無視
+__*
+
+# Eclipseのプロジェクトファイルを無視
+.classpath
+.project
+.settings/**
+
+# JetBrainsのIDEファイルを無視
+.idea/
+*.iml
+
+# VSCodeの設定ファイルを無視
+.vscode
+
+# go buildの出力ファイルを無視
+/output*/
+_output*/
+
+# エディタの一時ファイルを無視
+*~
+\#*\#
+.\#*
+
+# Vim関連の一時ファイルを無視
+[._]*.s[a-w][a-z]
+*.un~
+Session.vim
+.netrwhist
+
+# cscope関連のファイルを無視
+cscope.*
+
+# GinkgoやJUnitのテスト出力を無視
+/junit*.xml
+/hack/.test-cmd-auth
+
+# Bazel関連ファイルを無視
+/bazel-*
+
+# Jenkinsで使用されるGo依存関係を無視
+/_gopath/
+
+# Cloud Provider（gcloud/gsutil）の設定ディレクトリを無視
+/.config/gcloud*/
+.gsutil/
+
+# etcdやprotocのインストールファイルを無視
+/third_party/etcd*
+/third_party/protoc*
+
+# Docker化されたビルド用のバージョンファイルを無視
+.dockerized-kube-version-defs
+
+
+# ==========================
+# Terraform 関連
+# ==========================
+# .terraformディレクトリとその内容を無視
+**/.terraform/*
+
+# .tfstateファイルを無視（ステートファイルには環境固有のデータが含まれる）
+*.tfstate
+*.tfstate.*
+
+# クラッシュログファイルを無視
+crash.log
+crash.*.log
+
+# 機密情報が含まれる可能性がある.tfvarsファイルを無視
+*.tfvars
+*.tfvars.json
+
+# ローカルリソースのオーバーライドに使用されるファイルを無視
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Terraformのロックファイルを無視
+.terraform.tfstate.lock.info
+
+# Terraform計画ファイルを無視
+*.tfplan*
+
+# Terraform CLI設定ファイルを無視
+.terraformrc
+terraform.rc
+
+**/var.yml
+**/secrets.yml
+# ==========================
+# 内部向け資料
+# ==========================
+# 内部用のドキュメントや一時的なファイルを無視
+milestone.drawio
+# KustomizeやKindのテスト時に生成される一時ファイルやログを無視
+k8s/kustomize-test/*
+k8s/kind_logs/*
+# Kubernetesのマニフェストファイルを無視
+k8s/manifest/*
+
+
+# ==========================
+# Go 関連
+# ==========================
+# 公式テンプレートに基づくサンプル
+# https://github.com/github/gitignore/blob/main/community/Golang/Go.AllowList.gitignore
+
+# Goバイナリファイルを無視
+backend/bin/*
+
+# すべてのpkgディレクトリを除外
+pkg/*
+
+# ただし、自分のプロジェクトコードやテストファイルは追跡対象に含める
+!pkg/**/*.go
+!pkg/**/*_test.go
+
+# 実行ファイル、共有ライブラリ、プラグインを無視
+*.exe
+*.dll
+*.so
+*.dylib
+
+# go testコマンドで生成されるテストバイナリファイルを無視
+*.test
+
+# Goのカバレッジツールによる出力ファイルを無視
+*.out
+
+# Go modulesのワークスペースファイルを無視
+go.work
+go.work.sum
+
+# 環境変数ファイルを無視
+.env*
+.env/**
+.envrc
+
+# ==========================
+# React & JavaScript 関連
+# ==========================
+# ログファイルを無視
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Node.jsのバイナリアドオンを無視
+build/Release
+
+# 依存関係のディレクトリを無視
+node_modules/
+jspm_packages/
+
+# 配布用のディレクトリを無視
+dist/
+
+# TypeScriptの宣言ファイルを無視
+typings/
+
+# npmやeslintのキャッシュファイルを無視
+.npm
+.eslintcache
+
+# npm packコマンドで生成されるファイルを無視
+*.tgz
+
+# Yarnの整合性ファイルを無視
+.yarn-integrity
+
+
+# ==========================
+# Kubernetes 関連
+# ==========================
+# MacのSMB共有で生成される一時ファイルを無視
+._*
+
+# Macのゴミ箱ファイルを無視
+.DS_Store
+
+# ローカルの設定ファイルを無視
+__*
+
+# Eclipseのプロジェクトファイルを無視
+.classpath
+.project
+.settings/**
+
+# JetBrainsのIDEファイルを無視
+.idea/
+*.iml
+
+# VSCodeの設定ファイルを無視
+.vscode
+
+# go buildの出力ファイルを無視
+/output*/
+_output*/
+
+# エディタの一時ファイルを無視
+*~
+\#*\#
+.\#*
+
+# Vim関連の一時ファイルを無視
+[._]*.s[a-w][a-z]
+*.un~
+Session.vim
+.netrwhist
+
+# cscope関連のファイルを無視
+cscope.*
+
+# GinkgoやJUnitのテスト出力を無視
+/junit*.xml
+/hack/.test-cmd-auth
+
+# Bazel関連ファイルを無視
+/bazel-*
+
+# Jenkinsで使用されるGo依存関係を無視
+/_gopath/
+
+# Cloud Provider（gcloud/gsutil）の設定ディレクトリを無視
+/.config/gcloud*/
+.gsutil/
+
+# etcdやprotocのインストールファイルを無視
+/third_party/etcd*
+/third_party/protoc*
+
+# Docker化されたビルド用のバージョンファイルを無視
+.dockerized-kube-version-defs
+
+
+# ==========================
+# Terraform 関連
+# ==========================
+# .terraformディレクトリとその内容を無視
+**/.terraform/*
+
+# .tfstateファイルを無視（ステートファイルには環境固有のデータが含まれる）
+*.tfstate
+*.tfstate.*
+
+# クラッシュログファイルを無視
+crash.log
+crash.*.log
+
+# 機密情報が含まれる可能性がある.tfvarsファイルを無視
+*.tfvars
+*.tfvars.json
+
+# ローカルリソースのオーバーライドに使用されるファイルを無視
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Terraformのロックファイルを無視
+.terraform.tfstate.lock.info
+
+# Terraform計画ファイルを無視
+*.tfplan*
+
+# Terraform CLI設定ファイルを無視
+.terraformrc
+terraform.rc
+
+**/var.yml
+**/secrets.yml
