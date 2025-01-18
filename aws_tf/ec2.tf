@@ -14,7 +14,7 @@ resource "aws_instance" "web" {
     rm -rf /usr/share/nginx/html/*
     mv sprint1/web/src/* /usr/share/nginx/html/
     cd /usr/share/nginx/html/
-    sed -i 's|const apiIp = "APIIPADDRESS"|const apiIp = "${aws_instance.api.public_ip}"|' /usr/share/nginx/html/sprint1/web/src/index.js
+    sed -i 's|const apiIp = "APIIPADDRESS"|const apiIp = "${aws_instance.api.public_ip}"|' /usr/share/nginx/html/index.js
     systemctl restart nginx
     EOF
 
@@ -31,6 +31,15 @@ resource "aws_instance" "api" {
   subnet_id = aws_route_table_association.sprint1_route_asso_igw_api.subnet_id
   vpc_security_group_ids = [aws_security_group.api.id]
   key_name = aws_key_pair.key_pair.key_name
+  user_data = <<-EOF
+    #!/bin/bash
+    yum update -y
+    yum install -y git
+    git clone https://github.com/tamako8782/sprint1.git
+     ./sprint1/api/api_for_linux_amd 
+  EOF
+
+  user_data_replace_on_change = true
   tags = {
     Name = "api-server-01"
   }
@@ -139,8 +148,11 @@ resource "aws_key_pair" "key_pair" {
 }
 
 # インスタンスのパブリックIPアドレスを出力
-output "public_ip" {
+output "web_public_ip" {
   value = aws_instance.web.public_ip
 }
 
+output "api_public_ip" {
+  value = aws_instance.api.public_ip
+}
 
