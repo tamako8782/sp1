@@ -364,3 +364,12 @@ terraform.rc
 
 **/var.yml
 **/secrets.yml
+
+# ssh鍵
+**/*.id_rsa
+**/*.id_rsa.pub
+**/*.pem
+
+# docker用テストdbのdbvolフォルダ配下
+**/dbvol/
+
