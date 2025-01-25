@@ -10,9 +10,9 @@ resource "aws_instance" "web" {
     yum install -y git nginx
     systemctl enable nginx
     systemctl start nginx
-    git clone https://github.com/tamako8782/sprint1.git
+    git clone https://github.com/tamako8782/sp1.git
     rm -rf /usr/share/nginx/html/*
-    mv sprint1/web/src/* /usr/share/nginx/html/
+    mv sp1/web/src/* /usr/share/nginx/html/
     cd /usr/share/nginx/html/
     sed -i 's|const apiIp = "APIIPADDRESS"|const apiIp = "${aws_instance.api.public_ip}"|' /usr/share/nginx/html/index.js
     systemctl restart nginx
@@ -35,8 +35,8 @@ resource "aws_instance" "api" {
     #!/bin/bash
     yum update -y
     yum install -y git
-    git clone https://github.com/tamako8782/sprint1.git
-     ./sprint1/api/api_for_linux_amd 
+    git clone https://github.com/tamako8782/sp1.git
+     ./sp1/api/api_for_linux_amd 
   EOF
 
   user_data_replace_on_change = true
